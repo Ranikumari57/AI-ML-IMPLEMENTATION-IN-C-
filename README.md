@@ -1,4 +1,4 @@
-# AI-ML-IMPLEMENTATION-IN-C-
+# AI-ML-IMPLEMENTATION-IN-C++ 
 
 - **Name:** `Rani kumari `  
 - **Company:** `CODTECH IT SOLUTIONS`  
