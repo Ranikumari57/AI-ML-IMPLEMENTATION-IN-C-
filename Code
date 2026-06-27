@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    // ----------------------------
+    // Training Dataset
+    // ----------------------------
+    float size[] = {500, 1000, 1500, 2000, 2500};
+    float price[] = {50, 100, 150, 200, 250};
+
+    int n = 5;
+
+    float sumX = 0, sumY = 0;
+    float sumXY = 0, sumX2 = 0;
+
+    // ----------------------------
+    // Step 1: Calculate sums
+    // ----------------------------
+    for(int i = 0; i < n; i++) {
+        sumX += size[i];
+        sumY += price[i];
+        sumXY += size[i] * price[i];
+        sumX2 += size[i] * size[i];
+    }
+
+    // ----------------------------
+    // Step 2: Calculate slope (m)
+    // ----------------------------
+    float m = (n * sumXY - sumX * sumY) /
+              (n * sumX2 - sumX * sumX);
+
+    // ----------------------------
+    // Step 3: Calculate intercept (c)
+    // ----------------------------
+    float c = (sumY - m * sumX) / n;
+
+    // ----------------------------
+    // Display trained model
+    // ----------------------------
+    cout << "==============================" << endl;
+    cout << " AI/ML MODEL TRAINED SUCCESSFULLY " << endl;
+    cout << "==============================" << endl;
+
+    cout << "Equation: Price = " << m << "x + " << c << endl;
+    cout << endl;
+
+    // ----------------------------
+    // Step 4: User Input
+    // ----------------------------
+    float newSize;
+
+    cout << "Enter house size (in sq ft): ";
+    cin >> newSize;
+
+    // ----------------------------
+    // Step 5: Prediction
+    // ----------------------------
+    float predictedPrice = m * newSize + c;
+
+    cout << endl;
+    cout << "Predicted House Price: " << predictedPrice << endl;
+
+    cout << "==============================" << endl;
+
+    return 0;
+}
